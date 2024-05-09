@@ -9,14 +9,6 @@ return {
 			themeable = true,
 			separator_style = "slant",
 			diagnostics = false,
-			offsets = {
-				{
-          filetype = "neo-tree",
-          text = "Files",
-          highlight = "Directory",
-          separator = true,
-        },
-			},
 		}
 
 		bufferline.setup({ options = opts })
