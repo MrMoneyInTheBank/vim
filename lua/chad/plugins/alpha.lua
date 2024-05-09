@@ -28,7 +28,6 @@ return {
 		_Gopts = {
 			position = "center",
 			hl = "Type",
-			-- wrap = "overflow";
 		}
 
 		-- Set menu
@@ -36,7 +35,7 @@ return {
 			dashboard.button("e", "   New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("f", "   Find file", ":Telescope find_files<CR>"),
 			dashboard.button("g", "󰱼   Find word", ":Telescope live_grep<CR>"),
-			dashboard.button("r", "   Recent", ":Telescope oldfiles<CR>"),
+			dashboard.button("h", "   Health", ":checkhealth<CR>"),
 			dashboard.button("c", "   Config", ":e $MYVIMRC <CR>"),
 			dashboard.button("m", "󱌣   Mason", ":Mason<CR>"),
 			dashboard.button("l", "󰒲   Lazy", ":Lazy<CR>"),
