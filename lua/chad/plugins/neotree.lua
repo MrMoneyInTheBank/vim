@@ -7,7 +7,22 @@ return {
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>')
-    vim.keymap.set('n', '<leader>fe', ':Neotree filesystem focus<CR>')
-  end
+    local neotree = require("neo-tree")
+
+    neotree.setup({
+      close_if_last_window = false,
+      enable_diagnostics = true,
+      enable_git_status = true,
+      popup_border_style = "rounded",
+      sort_case_insensitive = false,
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
+      },
+    })
+    vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
+    vim.keymap.set("n", "<leader>fe", ":Neotree filesystem focus<CR>")
+  end,
 }
