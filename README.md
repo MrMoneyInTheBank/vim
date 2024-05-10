@@ -18,6 +18,7 @@ Clone this repository:
    ```bash
    # For unix-based systems
    git clone https://github.com/MrMoneyInTheBank/vim.git ~/.config/nvim
+   # For macOS only
    chmod +x ~/.config/nvim/install.sh
    ~/.config/nvim/install.sh
    ```
