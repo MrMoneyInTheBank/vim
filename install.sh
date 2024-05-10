@@ -19,8 +19,8 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
       alacritty_app_path=$(find $(brew --prefix) -name "Alacritty.app")
       xattr -d com.apple.quarantine "$alacritty_app_path"
-      open -a Alacritty
     fi
+    open -a Alacritty
   fi
 
   # Check if the default font is not a Nerd Font
