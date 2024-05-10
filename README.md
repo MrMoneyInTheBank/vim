@@ -44,7 +44,3 @@ This is my nvim config which includes everything that I need for software develo
 - [**None-ls**](https://github.com/nvimtools/none-ls.nvim): LSP Adapter.
 - [**Telescope**](https://github.com/nvim-telescope/telescope.nvim): Fuzzy Finder.
 - [**Treesitter**](https://github.com/nvim-treesitter/nvim-treesitter): Syntax Highlighting.
-
-
-
-
