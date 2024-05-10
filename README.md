@@ -13,7 +13,7 @@ This is my nvim config which includes everything that I need for software develo
 
 ## Installation
 
-1. Clone this repository:
+Clone this repository:
 
    ```bash
    # For unix-based systems
