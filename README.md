@@ -16,7 +16,13 @@ This is my nvim config which includes everything that I need for software develo
 1. Clone this repository:
 
    ```bash
+   # For unix-based systems
    git clone https://github.com/MrMoneyInTheBank/vim.git ~/.config/nvim
+   ```
+
+   ```bash
+   # For windows systems
+   git clone https://github.com/MrMoneyInTheBank/vim.git %APPDATA%\nvim
    ```
 
 ## Plugins
