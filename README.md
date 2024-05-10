@@ -18,12 +18,15 @@ Clone this repository:
    ```bash
    # For unix-based systems
    git clone https://github.com/MrMoneyInTheBank/vim.git ~/.config/nvim
+   chmod +x ~/.config/nvim/install.sh
    ~/.config/nvim/install.sh
    ```
 
    ```bash
    # For windows systems
    git clone https://github.com/MrMoneyInTheBank/vim.git %APPDATA%\nvim
+
+   ## Change file permissions before executing install script
    %APPDATA%\nvim\install.sh
    ```
 
