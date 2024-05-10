@@ -9,11 +9,18 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   fi
   # Check if iTerm2 is the current terminal
   if [ "$TERM_PROGRAM" != "Alacritty" ]; then
-    if ! command -v iterm2 &> /dev/null; then
+    if ! command -v alacritty &> /dev/null; then
       echo "Alacritty is not installed. Installing Alacritty..."
-      brew install --cask alacritty
+      if ! brew install --cask alacritty; then
+          echo "Failed to install Alacritty."
+          exit 1
+      fi
+      echo "Alacritty installation successful."
+
+      alacritty_app_path=$(find $(brew --prefix) -name "Alacritty.app")
+      xattr -d com.apple.quarantine "$alacritty_app_path"
+      open -a Alacritty
     fi
-    open -a Alacritty
   fi
 
   # Check if the default font is not a Nerd Font
