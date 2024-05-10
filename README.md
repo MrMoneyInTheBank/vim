@@ -20,7 +20,7 @@ This is my nvim config which includes everything that I need for software develo
    ```
 
 ## Plugins
-- **[Alpha]**(https://github.com/goolord/alpha-nvim): Dashboard.
+- [**Alpha**](https://github.com/goolord/alpha-nvim): Dashboard.
 - **[Nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons): File icons.
 - **[Bufferline](https://github.com/akinsho/bufferline.nvim): Chip tabs for open buffers.
 - **[Catppuccin](https://github.com/catppuccin/nvim): The best theme.
