@@ -13,8 +13,32 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
       echo "Alacritty is not installed. Installing Alacritty..."
       brew install --cask alacritty
     fi
-    open -a alacritty
+    open -a Alacritty
   fi
+
+  # Check if the default font is not a Nerd Font
+  if ! grep -q 'Nerd Font' ~/.config/alacritty/alacritty.yml; then
+    # Install the Nerd Font you want to use
+    brew tap homebrew/cask-fonts
+    brew install --cask font-fira-code-nerd-font
+
+    # Set up Alacritty configuration file
+    mkdir -p ~/.config/alacritty
+    cat > ~/.config/alacritty/alacritty.yml <<EOL
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+EOL
+
+    # Restart Alacritty
+    osascript -e 'quit app "Alacritty"'
+    open -a Alacritty
+  fi
+
   if ! command -v nvim &> /dev/null; then
     echo "Neovim is not installed. Installing Neovim..."
     brew install neovim
@@ -23,4 +47,4 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   echo "My bad g, i didnt really configure this for linux or windows"
   exit 1
-  fi
+fi
