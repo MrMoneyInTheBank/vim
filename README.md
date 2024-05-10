@@ -15,13 +15,13 @@ This is my nvim config which includes everything that I need for software develo
 
 Clone this repository:
 
-   ```shell
+   ```bash
    # For unix-based systems
    git clone https://github.com/MrMoneyInTheBank/vim.git ~/.config/nvim
    ~/.config/nvim/install.sh
    ```
 
-   ```shell
+   ```bash
    # For windows systems
    git clone https://github.com/MrMoneyInTheBank/vim.git %APPDATA%\nvim
    %APPDATA%\nvim\install.sh
