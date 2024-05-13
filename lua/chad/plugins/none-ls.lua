@@ -9,6 +9,8 @@ return {
 				null_ls.builtins.diagnostics.mypy.with({ filetypes = { "python" } }),
 				null_ls.builtins.formatting.stylua.with({ filetypes = { "lua" } }),
 				null_ls.builtins.formatting.black.with({ filetypes = { "python" } }),
+				null_ls.builtins.formatting.gofumpt.with({ filetypes = { "go" } }),
+				null_ls.builtins.formatting.goimports_reviser.with({ filetypes = { "go" } }),
 			},
 			on_attach = function(client, bufnr)
 				if client.supports_method("textDocument/formatting") then

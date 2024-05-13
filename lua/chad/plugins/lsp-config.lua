@@ -14,7 +14,9 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
-          "ruff_lsp",
+					"ruff_lsp",
+					"gopls",
+					"rust_analyzer",
 				},
 			})
 		end,
@@ -31,19 +33,50 @@ return {
 			})
 
 			lspconfig.pyright.setup({
-        capabilities = capabilities,
-        filetypes = {"python"}
-      })
+				capabilities = capabilities,
+				filetypes = { "python" },
+			})
 
 			lspconfig.ruff_lsp.setup({
-        capabilities = capabilities,
-        filetypes = {"python"}
-      })
+				init_options = {
+					settings = {
+						args = {},
+					},
+				},
+				capabilities = capabilities,
+				filetypes = { "python" },
+			})
+
+			lspconfig.gopls.setup({
+				capabilities = capabilities,
+				filetypes = { "go" },
+			})
+
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+				filetypes = { "rust" },
+				settings = {
+					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
+					},
+				},
+			})
 
 			-- mappings
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
+		end,
+	},
+	{
+		"rust-lang/rust.vim",
+		ft = "rust",
+		init = function()
+			vim.g.rustfmt_autosave = 1
 		end,
 	},
 }
