@@ -17,6 +17,8 @@ return {
 					"ruff_lsp",
 					"gopls",
 					"rust_analyzer",
+					"clangd",
+					"tsserver",
 				},
 			})
 		end,
@@ -62,6 +64,26 @@ return {
 						},
 					},
 				},
+			})
+
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+				filetypes = { "cpp" },
+			})
+
+			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+				filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			})
+
+			lspconfig.tailwindcss.setup({
+				capabilities = capabilities,
+				filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+			})
+
+			lspconfig.eslint.setup({
+				capabilities = capabilities,
+				filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 			})
 
 			-- mappings
