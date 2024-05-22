@@ -68,7 +68,7 @@ return {
 
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
-				filetypes = { "cpp" },
+				filetypes = { "c", "cpp" },
 			})
 
 			lspconfig.tsserver.setup({
