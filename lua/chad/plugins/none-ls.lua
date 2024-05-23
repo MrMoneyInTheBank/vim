@@ -11,7 +11,7 @@ return {
 				null_ls.builtins.formatting.black.with({ filetypes = { "python" } }),
 				null_ls.builtins.formatting.gofumpt.with({ filetypes = { "go" } }),
 				null_ls.builtins.formatting.goimports_reviser.with({ filetypes = { "go" } }),
-				null_ls.builtins.formatting.clang_format.with({ filetypes = { "cpp" } }),
+				null_ls.builtins.formatting.clang_format.with({ filetypes = { "c", "cpp" } }),
 				null_ls.builtins.formatting.prettierd.with({
 					filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 				}),
