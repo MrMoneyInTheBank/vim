@@ -1,5 +1,15 @@
 # Setup NeoVim Like A Chad
 
+## I need to update the plugins table 
+- added supermaven (testing)
+- autopairs
+- autotag
+- comment 
+- Im sure i have some new dap configs 
+- noice 
+- nvim surround 
+- toggleterm
+- whichkey
 ## Introduction
 
 This is my nvim config which includes everything that I need for software development. It's focused on simplicity and extensibility.
