@@ -8,6 +8,7 @@ return {
 			mode = "buffers",
 			themeable = true,
 			separator_style = "slant",
+			separator_style = "thin",
 			diagnostics = false,
 			offsets = {
 				{
