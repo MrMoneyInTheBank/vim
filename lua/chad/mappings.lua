@@ -1,7 +1,30 @@
-vim.g.mapleader = " "
-vim.keymap.set("i", "jk", "<Esc>")
+local M = {}
 
-vim.keymap.set("n", "<leader>ii", "gg0vG$=")
-vim.keymap.set("n", "<leader>cop", "<cmd>%yank<CR>")
+M.general = {
+  i = {
+    ["jk"] = { "<Esc>", "Exit insert mode" },
+  },
+  n = {
+    ["<leader>ii"] = { "gg0vG$=", "Indent whole file" },
+    ["<leader>cop"] = { "<cmd>%yank<CR>", "Copy entire file" },
+    ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
+  },
+}
 
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+M.tmux = {
+  plugin = {
+    ["<C-h>"] = { "<cmd>TmuxNavigateLeft<cr>", "Navigate Left" },
+    ["<C-j>"] = { "<cmd>TmuxNavigateDown<cr>", "Navigate Down" },
+    ["<C-k>"] = { "<cmd>TmuxNavigateUp<cr>", "Navigate Up" },
+    ["<C-l>"] = { "<cmd>TmuxNavigateRight<cr>", "Navigate Right" },
+  },
+}
+
+function M.setup()
+  local wk = require("which-key")
+  wk.register(M.general.i, { mode = "i" })
+  wk.register(M.general.n, { mode = "n" })
+  wk.register(M.tmux.plugin, { mode = "n" })
+end
+
+return M
