@@ -7,18 +7,36 @@ return {
 		end,
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		name = "mason-tool-installer",
+		dependencies = { "williamboman/mason.nvim" },
+		config = function()
+			local installer = require("mason-tool-installer")
+
+			installer.setup({
+				ensure_installed = {
+					"mypy",
+				},
+			})
+		end,
+	},
+	{
 		"williamboman/mason-lspconfig.nvim",
 		name = "mason-lspconfig",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
 		config = function()
+			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
 					"pyright",
-					"ruff_lsp",
+					"ruff",
 					"gopls",
 					"rust_analyzer",
 					"clangd",
-					"tsserver",
+					"ts_ls",
 				},
 			})
 		end,
@@ -37,16 +55,7 @@ return {
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 				filetypes = { "python" },
-			})
-
-			lspconfig.ruff_lsp.setup({
-				init_options = {
-					settings = {
-						args = {},
-					},
-				},
-				capabilities = capabilities,
-				filetypes = { "python" },
+				offset_encoding = "utf-8",
 			})
 
 			lspconfig.gopls.setup({
@@ -71,9 +80,10 @@ return {
 				filetypes = { "c", "cpp" },
 			})
 
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 				filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+				offset_encoding = "utf-8",
 			})
 
 			lspconfig.tailwindcss.setup({
