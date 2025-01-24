@@ -1,30 +1,20 @@
 local M = {}
 
-M.general = {
-  i = {
-    ["jk"] = { "<Esc>", "Exit insert mode" },
-  },
-  n = {
-    ["<leader>ii"] = { "gg0vG$=", "Indent whole file" },
-    ["<leader>cop"] = { "<cmd>%yank<CR>", "Copy entire file" },
-    ["gd"] = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Go to definition" },
-  },
-}
-
-M.tmux = {
-  plugin = {
-    ["<C-h>"] = { "<cmd>TmuxNavigateLeft<cr>", "Navigate Left" },
-    ["<C-j>"] = { "<cmd>TmuxNavigateDown<cr>", "Navigate Down" },
-    ["<C-k>"] = { "<cmd>TmuxNavigateUp<cr>", "Navigate Up" },
-    ["<C-l>"] = { "<cmd>TmuxNavigateRight<cr>", "Navigate Right" },
-  },
-}
-
 function M.setup()
   local wk = require("which-key")
-  wk.register(M.general.i, { mode = "i" })
-  wk.register(M.general.n, { mode = "n" })
-  wk.register(M.tmux.plugin, { mode = "n" })
+  -- insert mode
+  wk.add({ "jk", "<Esc>", desc = "Exit insert mode", mode = "i" })
+  -- normal mode
+  wk.add({ "<leader>ii", "gg0vG$=", desc = "Indent whole file", mode = "n" })
+  wk.add({ "<leader>cop", "<cmd>%yank<CR>", desc = "Copy entire file", mode = "n" })
+  wk.add({ "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Go to definition", mode = "n" })
+  -- tmux
+  wk.add({ "<C-h>", "<cmd>TmuxNavigateLeft<cr>", desc = "Navigate Left", mode = "n" })
+  wk.add({ "<C-j>", "<cmd>TmuxNavigateDown<cr>", desc = "Navigate Down", mode = "n" })
+  wk.add({ "<C-k>", "<cmd>TmuxNavigateUp<cr>", desc = "Navigate Up", mode = "n" })
+  wk.add({ "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "Navigate Right", mode = "n" })
+  -- DAP
+  wk.add({ "<leader>dn", "<cmd>DapContinue<cr>", desc = "DapContinue", mode = "n" })
 end
 
 return M
