@@ -38,6 +38,7 @@ return {
 					"clangd",
 					"ts_ls",
 					"zls",
+					"tinymist",
 				},
 			})
 		end,
@@ -103,6 +104,16 @@ return {
 			lspconfig.zls.setup({
 				capabilities = capabilities,
 				filetypes = { "zig" },
+			})
+
+			lspconfig.tinymist.setup({
+				capabilities = capabilities,
+				filetypes = { "typst" },
+				settings = {
+					formatterMode = "typstyle",
+					exportPdf = "never",
+					semanticTOkens = "disable",
+				},
 			})
 
 			-- mappings
