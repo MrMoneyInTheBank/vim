@@ -16,8 +16,9 @@ function M.setup()
 	wk.add({ "<C-l>", "<cmd>TmuxNavigateRight<cr>", desc = "Navigate Right", mode = "n" })
 	-- DAP
 	wk.add({ "<leader>dn", "<cmd>DapContinue<cr>", desc = "DapContinue", mode = "n" })
-	-- TypstPreview
+	-- Typst
 	wk.add({ "<leader>p", "<cmd>TypstPreview<cr>", desc = "Typst Preview", mode = "n" })
+	wk.add({ "<leader>b", "<cmd>Export<cr>", desc = "Export to pdf", mode = "n" })
 end
 
 return M
