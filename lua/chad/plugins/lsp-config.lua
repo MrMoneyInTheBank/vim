@@ -102,7 +102,7 @@ return {
 
 			lspconfig.zls.setup({
 				capabilities = capabilities,
-				filetiles = { "zig" },
+				filetypes = { "zig" },
 			})
 
 			-- mappings
