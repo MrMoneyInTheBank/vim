@@ -19,6 +19,8 @@ function M.setup()
 	-- Typst
 	wk.add({ "<leader>p", "<cmd>TypstPreview<cr>", desc = "Typst Preview", mode = "n" })
 	wk.add({ "<leader>b", "<cmd>Export<cr>", desc = "Export to pdf", mode = "n" })
+	-- Supermaven
+	wk.add({ "<leader>smo", "<cmd>SupermavenStop<cr>", desc = "Supermaven Stop", mode = "n" })
 end
 
 return M
