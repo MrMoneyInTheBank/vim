@@ -21,6 +21,7 @@ function M.setup()
 	wk.add({ "<leader>b", "<cmd>Export<cr>", desc = "Export to pdf", mode = "n" })
 	-- Supermaven
 	wk.add({ "<leader>smo", "<cmd>SupermavenStop<cr>", desc = "Supermaven Stop", mode = "n" })
+	wk.add({ "<leader>sms", "<cmd>SupermavenStart<cr>", desc = "Supermaven Start", mode = "n" })
 end
 
 return M
