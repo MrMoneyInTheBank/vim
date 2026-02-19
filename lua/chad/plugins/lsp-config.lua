@@ -39,6 +39,7 @@ return {
 					"ts_ls",
 					"zls",
 					"tinymist",
+					"jsonls",
 				},
 			})
 		end,
@@ -114,6 +115,11 @@ return {
 					exportPdf = "never",
 					semanticTOkens = "disable",
 				},
+			})
+
+			lspconfig.jsonls.setup({
+				capabilities = capabilities,
+				filetypes = { "json" },
 			})
 
 			-- mappings
