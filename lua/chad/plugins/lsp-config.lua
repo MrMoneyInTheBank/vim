@@ -39,7 +39,8 @@ return {
 					"ts_ls",
 					"zls",
 					"tinymist",
-					"jsonls",
+					"astro",
+					"html",
 				},
 			})
 		end,
@@ -51,8 +52,14 @@ return {
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+			lspconfig.html.setup({
+				capabilities = capabilities,
+				filetypes = { "html" },
+			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
+				filetypes = { "lua" },
 			})
 
 			lspconfig.pyright.setup({
@@ -117,9 +124,9 @@ return {
 				},
 			})
 
-			lspconfig.jsonls.setup({
+			lspconfig.astro.setup({
 				capabilities = capabilities,
-				filetypes = { "json" },
+				filetypes = { "astro" },
 			})
 
 			-- mappings
