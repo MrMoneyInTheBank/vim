@@ -124,6 +124,15 @@ return {
       lspconfig.tinymist.setup({
         capabilities = capabilities,
         filetypes = { "typst" },
+        on_new_config = function(config, root_dir)
+          -- Resolve cross-problem links against the complete Blind75 book.
+          local main = root_dir .. "/typst/main.typ"
+          if vim.fn.filereadable(main) == 1
+            and vim.fn.filereadable(root_dir .. "/problems/catalog.json") == 1 then
+            config.settings.rootPath = root_dir
+            config.settings.typstExtraArgs = { main }
+          end
+        end,
         settings = {
           formatterMode = "typstyle",
           exportPdf = "never",
