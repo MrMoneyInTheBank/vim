@@ -34,6 +34,8 @@ function M.setup()
       }, { buffer = true })
     end,
   })
+  -- tuxedo
+  wk.add({ "<leader>td", "<cmd>Tuxedo<cr>", desc = "Tuxedo", mode = "n" })
 end
 
 return M
