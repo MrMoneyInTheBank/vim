@@ -84,7 +84,7 @@ What `install.sh` does (macOS only):
 
 - Installs **Homebrew** if missing
 - Installs and opens **Alacritty** (and configures **FiraCode Nerd Font** in `~/.config/alacritty/alacritty.yml`)
-- Installs: `neovim`, `ripgrep`, `fd`, `lazygit`
+- Installs: `neovim`, `ripgrep`, `fd`, `lazygit`, `tree-sitter-cli`
 
 ### Linux / Windows
 

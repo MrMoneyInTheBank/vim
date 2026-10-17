@@ -50,7 +50,7 @@ EOL
     echo "Neovim is not installed. Installing Neovim..."
     brew install neovim
   fi
-  brew install ripgrep fd lazygit
+  brew install ripgrep fd lazygit tree-sitter-cli
 else
   echo "My bad g, i didnt really configure this for linux or windows"
   exit 1
