@@ -1,4 +1,3 @@
-local csv = require("chad.utils.csv")
 local M = {}
 
 function M.setup()
@@ -22,20 +21,6 @@ function M.setup()
   wk.add({ "<leader>b", "<cmd>Export<cr>", desc = "Export to pdf", mode = "n" })
   -- Markdown
   wk.add({ "<leader>mp", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview Toggle", mode = "n" })
-  -- Supermaven
-  wk.add({ "<leader>smo", "<cmd>SupermavenStop<cr>", desc = "Supermaven Stop", mode = "n" })
-  wk.add({ "<leader>sms", "<cmd>SupermavenStart<cr>", desc = "Supermaven Start", mode = "n" })
-  -- csv view
-  vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "csv", "tsv" },
-    callback = function()
-      wk.add({
-        { "<leader>csv", csv.toggle, desc = "CSV toggle (autodelimiter)" },
-      }, { buffer = true })
-    end,
-  })
-  -- tuxedo
-  wk.add({ "<leader>td", "<cmd>Tuxedo<cr>", desc = "Tuxedo", mode = "n" })
 end
 
 return M

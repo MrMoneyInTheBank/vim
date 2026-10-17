@@ -1,3 +1,0 @@
-return {
-  "IogaMaster/tuxedo.nvim",
-}
